@@ -118,7 +118,7 @@ def test_short_password_registration(db_session):
         "password": "shor1"
     }
 
-    with pytest.raises(ValueError, match="Password must be at least 6 characters long, fool!"):
+    with pytest.raises(ValueError, match="Password must be at least 6 characters long"):
         User.register(db_session, test_data)
 
 
@@ -166,6 +166,6 @@ def test_missing_password_registration(db_session):
         "username": "nopassworduser",
     }
 
-    with pytest.raises(ValueError, match="Password must be at least 6 characters long, fool!"):
+    with pytest.raises(ValueError, match="Password must be at least 6 characters long"):
         User.register(db_session, test_data)
         

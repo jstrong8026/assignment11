@@ -68,7 +68,7 @@ class User(Base):
         try:
             password = user_data.get('password', '')
             if len(password) < 6: 
-                raise ValueError("Password must be at least 6 characters long, fool!")
+                raise ValueError("Password must be at least 6 characters long")
 
             existing_user = db.query(cls).filter(
                 (cls.email == user_data.get('email')) |
