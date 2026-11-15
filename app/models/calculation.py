@@ -112,7 +112,7 @@ class Addition(Calculation):
             raise ValueError("Inputs must be a list of numbers.")
         if len(self.inputs) < 2:
             raise ValueError(
-                "inputs must be a list with at least two numbers."
+                "Inputs must be a list with at least two numbers."
             )
         return sum(self.inputs)
 
@@ -125,7 +125,7 @@ class Subtraction(Calculation):
             raise ValueError("Inputs must be a list of numbers.")
         if len(self.inputs) < 2:
             raise ValueError(
-                "inputs must be a list with at least two numbers."
+                "Inputs must be a list with at least two numbers."
             )
         result = self.inputs[0]
         for value in self.inputs[1:]:
@@ -140,7 +140,7 @@ class Multiplication(Calculation):
             raise ValueError("Inputs must be a list of numbers.")
         if len(self.inputs) < 2:
             raise ValueError(
-                "inputs must be a list with at least two numbers."
+                "Inputs must be a list with at least two numbers."
             )
         result = 1
         for value in self.inputs:
