@@ -188,3 +188,39 @@ def test_polymorphic_method_calling():
         result = calc.get_result()
         assert result == expected, \
             f"{calc_type} failed: expected {expected}, got {result}"
+
+#These are new tests to get pytest coverage up to 100%
+
+def test_base_calculation_get_result_not_implemented():
+    calc = Calculation(user_id=dummy_user_id(), inputs=[1, 2])
+    with pytest.raises(NotImplementedError,
+                       match="Subclasses must implement get_result"):
+        calc.get_result()
+
+def test_calculation_repr():
+    calc = Addition(user_id=dummy_user_id(), inputs=[1, 2])
+    text = repr(calc)
+    assert "Calculation" in text
+    assert "[1, 2]" in text
+
+
+def test_addition_too_few_numbers():
+    addition = Addition(user_id=dummy_user_id(), inputs=[5])
+    with pytest.raises(ValueError, match="Inputs must be a list with at least two numbers."):
+        addition.get_result()
+
+
+def test_subtraction_inputs_not_list():
+    subtraction = Subtraction(user_id=dummy_user_id(), inputs="not a list")
+    with pytest.raises(ValueError, match="Inputs must be a list of numbers."):
+        subtraction.get_result()
+
+def test_multiplication_inputs_not_list():
+    multiplication = Multiplication(user_id=dummy_user_id(), inputs="not a list")
+    with pytest.raises(ValueError, match="Inputs must be a list of numbers."):
+        multiplication.get_result()
+
+def test_division_inputs_not_list():
+    division = Division(user_id=dummy_user_id(), inputs="not a list")
+    with pytest.raises(ValueError, match="Inputs must be a list of numbers."):
+        division.get_result()
