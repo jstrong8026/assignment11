@@ -48,10 +48,6 @@ class CalculationBase(BaseModel):
 
     @model_validator(mode='after')
     def validate_inputs(self) -> "CalculationBase":
-        if len(self.inputs) < 2:
-            raise ValueError(
-                "At least two numbers are required for calculation"
-            )
         if self.type == CalculationType.DIVISION:
             if any(x == 0 for x in self.inputs[1:]):
                 raise ValueError("Cannot divide by zero")
@@ -98,7 +94,7 @@ class CalculationUpdate(BaseModel):
     def validate_inputs(self) -> "CalculationUpdate":
         if self.inputs is not None and len(self.inputs) < 2:
             raise ValueError(
-                "At least two numbers are reqauired for calculation"
+                "At least two numbers are required for calculation"
             )
         return self
 

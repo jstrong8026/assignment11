@@ -279,3 +279,8 @@ def test_schema_with_mixed_int_and_float():
     calc = CalculationBase(**data)
     assert len(calc.inputs) == 4
 
+#New test to increase pytest coverage
+def test_calculation_base_insufficient_inputs_message():
+    with pytest.raises(ValidationError) as exc_info:
+        CalculationBase(type=CalculationType.ADDITION, inputs=[5])
+    assert any("at least 2" in str(err) for err in exc_info.value.errors())
