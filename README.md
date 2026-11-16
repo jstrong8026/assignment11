@@ -1,6 +1,26 @@
-#Project Links
+# Project Links
 DockerHub: </br>
-<a href="https://hub.docker.com/repository/docker/jstrong8026/601_module11/general">Module11</a> 
+<a href="https://hub.docker.com/r/jstrong8026/601_module11">Module11</a> 
+
+GitHub: </br>
+< a href="https://github.com/jstrong8026/assignment11">Assignment11 repository</a>
+
+</br>
+</br>
+
+# Testing
+<p>Start Postgres with docker: <i>docker compose up -d db</i> </br>
+Run Pytest: <i>pytest</i>
+
+
+# Reflection
+<p>A more substantial reflection was submitted as part of the 'reflection' assignment, but as a high-level overview: </p>
+<ul>
+   <li>I definitely see the importance of polymorphism - for me it seems like a logical way to structure your code if you can bundle it under a 'parent' class and then different child classes.</li>
+   <li>Order matters! When I was writing some of the tests I kept losing the ID because it was on a line after I made an expunge call. A very basic mistake that drove home the importance of putting things in the exact order you want them to be done.</li>
+</ul>
+
+
 
 
 # 📦 Project Setup
