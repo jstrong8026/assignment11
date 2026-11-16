@@ -3,7 +3,7 @@ DockerHub: </br>
 <a href="https://hub.docker.com/r/jstrong8026/601_module11">Module11</a> 
 
 GitHub: </br>
-< a href="https://github.com/jstrong8026/assignment11">Assignment11 repository</a>
+<a href="https://github.com/jstrong8026/assignment11">Assignment11 repository</a>
 
 </br>
 </br>
